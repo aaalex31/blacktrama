@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyecto — Blacktrama</title>
+<meta name="description" content="Blacktrama diseña webs y productos digitales tejidos con claridad y carácter.">
+<script src="./js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#0c0c0b;color:#ece8e1;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#ece8e1;text-decoration:none}
+a:hover{color:#ffd60a}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+html.bt-in body::after{content:"";position:fixed;inset:0;z-index:99999;pointer-events:none;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+html.bt-busy,html.bt-busy *{cursor:none!important}
+@keyframes bt-grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,2%)}33%{transform:translate(2%,-4%)}50%{transform:translate(-4%,-1%)}67%{transform:translate(3%,3%)}83%{transform:translate(-1%,4%)}100%{transform:translate(0,0)}}
+</style>
+<script>try{if(sessionStorage.getItem('bt-nav')){sessionStorage.removeItem('bt-nav');document.documentElement.classList.add('bt-in');}}catch(e){}</script>
+</helmet>
+<section data-screen-label="01 Proyecto" ref="{{ mainRef }}" style="position:relative;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;padding:0 clamp(16px,1.67vw,32px) clamp(120px,10vw,200px)">
+  <header data-rv="fade" style="height:clamp(64px,4.6vw,88px);display:flex;align-items:center;justify-content:space-between">
+    <a href="index.dc.html" style="font-size:clamp(17px,1.15vw,22px);font-weight:500;letter-spacing:-0.02em;color:#ece8e1">Blacktrama</a>
+    <nav style="display:flex;gap:clamp(20px,2.1vw,40px);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(11px,0.63vw,12px);letter-spacing:0.08em;text-transform:uppercase">
+      <a href="trabajos.dc.html" style="color:#8a8780;padding:6px 0;border-bottom:1px solid transparent" style-hover="color:#ece8e1">Trabajo</a>
+      <a href="contacto.dc.html" style="color:#ece8e1;padding:6px 0;border-bottom:1px solid #ece8e1" style-hover="color:#ffd60a;border-bottom-color:#ffd60a">Contacto</a>
+    </nav>
+  </header>
+
+  <a href="trabajos.dc.html" data-rv="fade" style="display:inline-flex;align-items:center;gap:6px;margin-top:clamp(40px,4.4vw,84px);font-size:clamp(13px,0.78vw,15px);color:#8a8780" style-hover="color:#ece8e1"><i class="ph ph-arrow-left" aria-hidden="true" style="font-size:1.1em;line-height:1"></i> Volver a trabajos</a>
+
+  <h1 data-rv="line" style="margin:clamp(20px,1.8vw,36px) 0 0;font-weight:400;font-size:clamp(52px,9.4vw,180px);line-height:0.95;letter-spacing:-0.04em;color:#ece8e1;text-wrap:balance">{{ p.name }}</h1>
+
+  <div style="{{ introGrid }}">
+    <p data-rv="fade" style="margin:0;max-width:32em;font-size:clamp(17px,1.04vw,20px);line-height:1.45;color:#ece8e1;text-wrap:pretty">{{ p.summary }}</p>
+    <dl data-rv="fade" style="{{ metaGrid }}">
+      <sc-for list="{{ meta }}" as="m" hint-placeholder-count="4">
+        <div style="{{ m.style }}">
+          <dt style="font-size:clamp(11px,0.63vw,12px);color:#8a8780;margin-bottom:10px">{{ m.label }}</dt>
+          <sc-for list="{{ m.values }}" as="v">
+            <dd style="margin:0;font-size:clamp(15px,0.89vw,17px);line-height:1.45;color:#ece8e1">{{ v }}</dd>
+          </sc-for>
+        </div>
+      </sc-for>
+    </dl>
+  </div>
+
+  <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="4">
+    <div style="margin-top:clamp(80px,7vw,140px)">
+      <sc-if value="{{ b.isImg }}" hint-placeholder-val="{{ true }}">
+        <div data-rv="img" data-hero="{{ b.hero }}" style="position:relative;overflow:hidden;aspect-ratio:{{ b.ratio }}"><div data-py="" style="position:absolute;left:0;right:0;top:-8%;bottom:-8%;will-change:transform"><div data-zoom="" style="position:absolute;inset:0;background:#3a3a39"></div></div></div>
+      </sc-if>
+      <sc-if value="{{ b.isPair }}" hint-placeholder-val="{{ false }}">
+        <div style="{{ pairGrid }}">
+          <div data-rv="img" style="position:relative;overflow:hidden;aspect-ratio:354 / 245"><div data-py="" style="position:absolute;left:0;right:0;top:-8%;bottom:-8%;will-change:transform"><div data-zoom="" style="position:absolute;inset:0;background:#3a3a39"></div></div></div>
+          <div data-rv="img" style="position:relative;overflow:hidden;aspect-ratio:354 / 245"><div data-py="" style="position:absolute;left:0;right:0;top:-8%;bottom:-8%;will-change:transform"><div data-zoom="" style="position:absolute;inset:0;background:#3a3a39"></div></div></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ b.isCenter }}" hint-placeholder-val="{{ false }}">
+        <div data-rv="img" style="{{ centerImg }}"><div data-py="" style="position:absolute;left:0;right:0;top:-8%;bottom:-8%;will-change:transform"><div data-zoom="" style="position:absolute;inset:0;background:#3a3a39"></div></div></div>
+      </sc-if>
+      <sc-if value="{{ b.isRows }}" hint-placeholder-val="{{ false }}">
+        <div style="border-bottom:1px solid #2a2a28">
+          <sc-for list="{{ b.rows }}" as="row">
+            <div data-rv="fade" style="{{ rowGrid }}">
+              <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(11px,0.63vw,12px);letter-spacing:0.08em;text-transform:uppercase;color:#ece8e1;padding-top:4px">{{ row.label }}</div>
+              <div style="max-width:32em;font-size:clamp(16px,0.94vw,18px);line-height:1.55;color:#a8a49c;text-wrap:pretty">
+                <sc-if value="{{ row.text }}">
+                  <p style="margin:0">{{ row.text }}</p>
+                </sc-if>
+                <sc-if value="{{ row.items }}">
+                  <ul style="margin:0;padding:0;list-style:none">
+                    <sc-for list="{{ row.items }}" as="li">
+                      <li>– {{ li }}</li>
+                    </sc-for>
+                  </ul>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </sc-for>
+  {{ vintage }}
+</section>
+
+<footer data-screen-label="02 Footer" ref="{{ footRef }}" style="position:relative;display:flex;flex-direction:column;min-height:clamp(0px,(100vw - 767px) * 9999,100svh);max-height:max(100svh,(1023px - 100vw) * 9999);background:#ece8e1;color:#0c0c0b;font-family:'Mona Sans',Helvetica,Arial,sans-serif">
+  <div style="{{ footGrid }}">
+    <div data-line="x" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:#e3dfd7;pointer-events:none;overflow:hidden"><div data-draw="" style="position:absolute;inset:0;background:#0c0c0b;opacity:0.55"></div></div>
+    <div style="{{ footLeft }}">
+      <div style="display:flex;flex-direction:column;gap:clamp(12px,1vw,20px)">
+        <a href="mailto:hola@blacktrama.studio" style="color:#0c0c0b;font-size:clamp(26px,2.5vw,48px);line-height:1.1;letter-spacing:-0.02em;overflow-wrap:anywhere" style-hover="color:#6b6862">hola@blacktrama.studio</a>
+        <a href="#" style="color:#0c0c0b;font-size:clamp(16px,1.04vw,20px);display:inline-flex;align-items:center;gap:8px;align-self:flex-start" style-hover="color:#6b6862"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true" style="font-size:1.25em;line-height:1"></i> WhatsApp</a>
+      </div>
+      <div style="display:flex;gap:clamp(24px,1.7vw,32px);font-size:clamp(15px,0.89vw,17px)">
+        <a href="#" style="color:#0c0c0b;display:inline-flex;align-items:center;gap:8px" style-hover="color:#6b6862"><i class="ph-fill ph-instagram-logo" aria-hidden="true" style="font-size:1.25em;line-height:1"></i> Instagram</a>
+        <a href="#" style="color:#0c0c0b;display:inline-flex;align-items:center;gap:8px" style-hover="color:#6b6862"><i class="ph-fill ph-behance-logo" aria-hidden="true" style="font-size:1.25em;line-height:1"></i> Behance</a>
+      </div>
+    </div>
+    <div style="{{ footRight }}">
+      <div data-line="{{ divAxis }}" aria-hidden="true" style="{{ footDivider }}"><div data-draw="" style="position:absolute;inset:0;background:#0c0c0b;opacity:0.55"></div></div>
+      <nav style="display:flex;flex-direction:column;font-size:clamp(32px,2.7vw,52px);line-height:1.15;letter-spacing:-0.02em">
+        <a href="trabajos.dc.html" style="color:#0c0c0b;align-self:flex-start" style-hover="color:#6b6862">Trabajo</a>
+        <a href="contacto.dc.html" style="color:#0c0c0b;align-self:flex-start;font-style:italic" style-hover="color:#6b6862">Contacto</a>
+      </nav>
+    </div>
+  </div>
+  <div style="flex-shrink:0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;position:relative;padding:clamp(24px,2vw,38px) clamp(16px,1.67vw,32px) clamp(28px,2.2vw,40px);font-size:clamp(13px,0.78vw,15px)">
+    <div data-line="x" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:#e3dfd7;pointer-events:none;overflow:hidden"><div data-draw="" style="position:absolute;inset:0;background:#0c0c0b;opacity:0.55"></div></div>
+    <span style="color:#7a766f">© 2026 Blacktrama</span>
+    <button type="button" onClick="{{ toTop }}" style="background:none;border:0;padding:0;font:inherit;color:#0c0c0b;cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="color:#6b6862">Volver arriba <i class="ph ph-arrow-up" aria-hidden="true" style="font-size:1.1em;line-height:1"></i></button>
+  </div>
+  <div style="flex-shrink:0;padding:clamp(12px,1.25vw,24px) clamp(16px,1.67vw,32px) clamp(16px,1.8vw,34px);overflow:hidden">
+    <div style="width:100%">
+      <span ref="{{ wmRef }}" data-rv="line" style="display:inline-block;white-space:nowrap;font-size:19.5vw;line-height:0.8;letter-spacing:-0.045em;font-weight:400;padding-bottom:0.02em">Blacktrama</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;project&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;clinica-sonrisa&quot;,&quot;options&quot;:[&quot;clinica-sonrisa&quot;,&quot;tienda-norte&quot;,&quot;estudio-lumen&quot;,&quot;cafe-ruta&quot;,&quot;agenda-viva&quot;,&quot;nodo-finanzas&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.07,&quot;min&quot;:0,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Vintage&quot;},&quot;smooth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.07,&quot;min&quot;:0.03,&quot;max&quot;:0.3,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Movimiento&quot;}}">
+const IMG = (ratio) => ({ type: 'img', ratio });
+const PROJECTS = {
+  'clinica-sonrisa': {
+    name: 'Clínica Sonrisa',
+    summary: 'Rediseño de la web de una clínica dental para que los pacientes reserven desde el celular, sin llamar.',
+    cliente: ['Clínica Sonrisa'], servicios: ['Diseño web', 'UX/UI en Figma'], tipo: ['Sitio web'], anio: ['2026'],
+    blocks: [
+      IMG('713 / 338'),
+      { type: 'rows', rows: [
+        { label: 'Contexto', text: 'La clínica recibía casi todas sus citas por teléfono. La web anterior no se entendía en el celular y el botón de reserva quedaba escondido al final de la página.' },
+        { label: 'Objetivos', items: ['Reservar en menos de un minuto desde el celular.', 'Mostrar tratamientos y precios de referencia con claridad.', 'Transmitir calma y confianza, no un catálogo médico frío.'] },
+      ] },
+      IMG('713 / 345'),
+      { type: 'rows', rows: [
+        { label: 'Mi parte', text: 'Diseño web y UX/UI en Figma: orden del contenido, wireframes, diseño visual y prototipo navegable. El desarrollo lo hizo el equipo de la clínica.' },
+        { label: 'Decisiones clave', items: ['Una sola acción visible en el home: reservar.', 'Paleta tomada de la clínica real, suavizada para pantalla.', 'Versión mobile diseñada primero, porque ahí llega la mayoría de visitas.'] },
+      ] },
+      { type: 'pair' },
+      { type: 'rows', rows: [
+        { label: 'Resultado', text: 'Las reservas por la web superaron a las llamadas desde el primer mes.' },
+      ] },
+      { type: 'center' },
+    ],
+  },
+};
+const STUBS = [
+  ['Tienda Norte', 'E-commerce · Moda', '2026', 'Catálogo y checkout en dos pasos.'],
+  ['Estudio Lumen', 'Diseño web · Arquitectura', '2025', 'Portafolio para un estudio de arquitectura.'],
+  ['Café Ruta', 'Landing page · Gastronomía', '2025', 'Carta y reservas en una sola pantalla.'],
+  ['Agenda Viva', 'UX/UI · Plataforma', '2025', 'Plataforma de reservas para talleres.'],
+  ['Nodo Finanzas', 'Concepto · Fintech', '2025', 'Panel de finanzas personales.'],
+  ['Hotel Brisa', 'Diseño web · Hotelería', '2025', ''],
+  ['Taller Barro', 'E-commerce · Cerámica', '2024', ''],
+  ['Pulso Fit', 'UX/UI · App de entrenamiento', '2024', ''],
+  ['Ruta Andina', 'Diseño web · Turismo', '2024', ''],
+  ['Casa Olivo', 'Landing page · Inmobiliaria', '2024', ''],
+  ['Lab Verde', 'Diseño web · Ciencia', '2024', ''],
+  ['Mercado Sur', 'E-commerce · Alimentos', '2023', ''],
+  ['Faro Legal', 'Diseño web · Abogados', '2023', ''],
+  ['Sello Eco', 'Concepto · Música', '2023', ''],
+];
+const slugify = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
+STUBS.forEach(([name, cat, year, summary]) => {
+  const tipo = cat.split(' · ')[0];
+  PROJECTS[slugify(name)] = { name, summary, cliente: [name], servicios: [tipo], tipo: [cat.split(' · ')[1] || tipo], anio: [year],
+    blocks: [IMG('713 / 338'), IMG('713 / 345'), { type: 'pair' }, { type: 'center' }] };
+});
+
+const PAGE_TRANSITIONS = true; // blur entre páginas + tarjeta→case study (desactivado por ahora)
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1920 };
+  mainRef = React.createRef(); footRef = React.createRef(); wmRef = React.createRef();
+  onResize = () => this.setState({ w: window.innerWidth });
+  slug() {
+    const q = new URLSearchParams(window.location.search).get('p');
+    if (q && PROJECTS[q]) return q;
+    return PROJECTS[this.props.project] ? this.props.project : 'clinica-sonrisa';
+  }
+  revealOnView(root) {
+    if (!root || !root.animate) return;
+    const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const els = [...root.querySelectorAll('[data-rv]')];
+    els.forEach(el => { if (el.dataset.rv === 'img') el.style.clipPath = 'inset(100% 0 0 0)'; else el.style.opacity = 0; });
+    const map = new Map();
+    els.forEach(el => { const tg = el.dataset.rv === 'img' ? el.parentNode : el; if (!map.has(tg)) map.set(tg, []); map.get(tg).push(el); });
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(en => {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        (map.get(en.target) || []).forEach((el, k) => {
+        const t = el.dataset.rv;
+        el.style.opacity = ''; el.style.clipPath = '';
+        if (t === 'line') el.animate([{ opacity: 0, transform: 'translateY(0.25em)', filter: 'blur(10px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 1200, delay: 120, easing: ease, fill: 'backwards' });
+        else if (t === 'img') el.animate([{ clipPath: 'inset(100% 0 0 0)', transform: 'translateY(40px)' }, { clipPath: 'inset(0% 0 0 0)', transform: 'none' }], { duration: 1300, delay: k * 150, easing: ease, fill: 'backwards' });
+        else el.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: 80, easing: ease, fill: 'backwards' });
+        });
+      });
+    }, { threshold: 0.12 });
+    map.forEach((_, tg) => io.observe(tg));
+    (this.ios = this.ios || []).push(io);
+  }
+  drawLines() {
+    const root = this.footRef.current; if (!root || !root.animate) return;
+    (this.lineAnims || []).forEach(a => a.cancel());
+    this.lineAnims = [...root.querySelectorAll('[data-line]')].map((el, i) => {
+      const d = el.querySelector('[data-draw]'); if (!d) return null;
+      const y = el.dataset.line === 'y', S = y ? 'scaleY' : 'scaleX';
+      const o0 = y ? 'center top' : (i % 2 ? 'right center' : 'left center');
+      const o1 = y ? 'center bottom' : (i % 2 ? 'left center' : 'right center');
+      return d.animate([
+        { transform: S + '(0)', transformOrigin: o0, offset: 0 },
+        { transform: S + '(1)', transformOrigin: o0, offset: 0.45 },
+        { transform: S + '(1)', transformOrigin: o1, offset: 0.55 },
+        { transform: S + '(0)', transformOrigin: o1, offset: 1 },
+      ], { duration: y ? 5200 : 4600, delay: i * 700, iterations: Infinity, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'both' });
+    }).filter(Boolean);
+  }
+  fitWordmark = () => {
+    const el = this.wmRef.current; if (!el) return;
+    el.style.fontSize = '100px';
+    const w = el.parentNode.clientWidth, sw = el.getBoundingClientRect().width;
+    if (sw > 0) el.style.fontSize = (100 * w / sw).toFixed(2) + 'px';
+  };
+  tick = (t) => {
+    if (!this.lenis && window.Lenis) this.lenis = new window.Lenis({ lerp: this.props.smooth ?? 0.07, wheelMultiplier: 0.85, touchMultiplier: 1.2, smoothWheel: true, anchors: true });
+    if (this.lenis) this.lenis.raf(t);
+    this.parallax();
+    this.raf = requestAnimationFrame(this.tick);
+  };
+
+  initPageTransitions() {
+    const EOUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const qs = new URLSearchParams(location.search);
+    const fromNav = this.enterFromNav();
+    if (!fromNav && qs.get('from') !== 'card' && document.body.animate) document.body.animate([{ filter: 'blur(16px)', opacity: 0, transform: 'scale(1.01)' }, { filter: 'blur(6px)', opacity: 1, offset: 0.45 }, { filter: 'blur(0px)', opacity: 1, transform: 'none' }], { duration: 1100, easing: EOUT });
+    this.onPageShow = (e) => { if (e.persisted) { this.leaving = false; document.body.getAnimations().forEach(a => a.cancel()); document.querySelectorAll('[data-bt-overlay]').forEach(n => n.remove()); document.documentElement.classList.remove('bt-busy'); this.spin = null; document.querySelectorAll('[data-bt-overlay]').forEach(n => n.remove()); } };
+    window.addEventListener('pageshow', this.onPageShow);
+    this.onLinkClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a || a.target === '_blank') return;
+      const raw = a.getAttribute('href'); if (!raw || raw.startsWith('#') || /^(mailto|tel):/.test(raw)) return;
+      const url = new URL(raw, location.href); if (url.origin !== location.origin) return;
+      e.preventDefault();
+      if (url.pathname === location.pathname && url.search === location.search) {
+        const t = url.hash && document.querySelector(url.hash);
+        if (this.lenis) this.lenis.scrollTo(t || 0); else window.scrollTo({ top: t ? t.getBoundingClientRect().top + scrollY : 0, behavior: 'smooth' });
+        return;
+      }
+      const img = a.querySelector('[data-card-img],[data-rv-img]');
+      if (img) this.expandTo(img, url); else this.leave(url.href, !!a.closest('footer'));
+    };
+    document.addEventListener('click', this.onLinkClick);
+    this.onPt = (e) => { this.ptX = e.clientX; this.ptY = e.clientY; if (this.spin) this.spin.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)'; };
+    document.addEventListener('pointermove', this.onPt, { passive: true }); document.addEventListener('pointerdown', this.onPt, { passive: true });
+    this.onOver = (e) => {
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a || a.target === '_blank') return;
+      const raw = a.getAttribute('href'); if (!raw || raw.startsWith('#') || /^(mailto|tel):/.test(raw)) return;
+      const url = new URL(raw, location.href); if (url.origin !== location.origin || url.pathname === location.pathname) return;
+      url.hash = ''; this.prefetch(url.href);
+    };
+    document.addEventListener('pointerover', this.onOver, { passive: true });
+    const idle = window.requestIdleCallback || ((f) => setTimeout(f, 1200));
+    idle(() => ['index', 'trabajos', 'proyecto', 'contacto'].forEach(p => { const u = new URL(p + '.dc.html', location.href); if (u.pathname !== location.pathname) this.prefetch(u.href); }));
+  }
+  prefetch(href) {
+    this.pf = this.pf || {};
+    if (!this.pf[href]) this.pf[href] = fetch(href, { credentials: 'same-origin' }).then(r => r.text()).catch(() => {});
+    return this.pf[href];
+  }
+  ready(href) {
+    return Promise.race([this.prefetch(href), new Promise(r => setTimeout(r, 2500))]).then(() => new Promise(r => requestAnimationFrame(() => r())));
+  }
+  busy(dark) {
+    if (this.spin) return;
+    document.documentElement.classList.add('bt-busy');
+    const c = dark ? '#0c0c0b' : '#ece8e1';
+    const s = document.createElement('div'); s.setAttribute('data-bt-overlay', '');
+    s.style.cssText = 'position:fixed;left:0;top:0;width:0;height:0;z-index:100000;pointer-events:none;transform:translate3d(' + (this.ptX ?? innerWidth / 2) + 'px,' + (this.ptY ?? innerHeight / 2) + 'px,0)';
+    const r = document.createElement('div');
+    r.style.cssText = 'position:absolute;left:-11px;top:-11px;width:22px;height:22px;box-sizing:border-box;border-radius:50%;border:2px solid ' + c + ';border-right-color:transparent';
+    s.appendChild(r); document.documentElement.appendChild(s);
+    r.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 700, iterations: Infinity });
+    this.spin = s;
+  }
+  blurLayer(px) {
+    const ov = document.createElement('div'); ov.setAttribute('data-bt-overlay', '');
+    ov.style.cssText = 'position:fixed;inset:0;z-index:99999;pointer-events:none;backdrop-filter:blur(' + px + 'px);-webkit-backdrop-filter:blur(' + px + 'px)';
+    document.documentElement.appendChild(ov); return ov;
+  }
+  enterFromNav() {
+    const de = document.documentElement; if (!de.classList.contains('bt-in')) return false;
+    const ov = this.blurLayer(14); de.classList.remove('bt-in');
+    const a = ov.animate([{ backdropFilter: 'blur(14px)' }, { backdropFilter: 'blur(0px)' }], { duration: 1000, delay: 60, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'forwards' });
+    a.onfinish = () => ov.remove();
+    return true;
+  }
+  leave(href, dark) {
+    if (this.leaving) return; this.leaving = true;
+    const st = setTimeout(() => this.busy(dark), 160);
+    this.ready(href).then(() => {
+      if (!this.spin) clearTimeout(st);
+      const ov = this.blurLayer(0); ov.style.pointerEvents = 'auto';
+      ov.animate([{ backdropFilter: 'blur(0px)' }, { backdropFilter: 'blur(14px)' }], { duration: 480, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'forwards' }).onfinish = () => {
+        try { sessionStorage.setItem('bt-nav', '1'); } catch (e) {}
+        location.href = href;
+      };
+    });
+  }
+  expandTo(el, url) { this.leave(url.href, false); }
+  expandCard(el, url) {
+    if (this.leaving) return; this.leaving = true;
+    if (this.cursorRef && this.cursorRef.current) this.cursorOn = false;
+    const st = setTimeout(() => this.busy(false), 160);
+    this.ready(url.href).then(() => { if (!this.spin) clearTimeout(st); this.leaving = false; this.expandNow(el, url); });
+  }
+  expandNow(el, url) {
+    if (this.leaving) return; this.leaving = true;
+    const r = el.getBoundingClientRect(), bg = getComputedStyle(el).backgroundColor;
+    url.searchParams.set('from', 'card'); url.searchParams.set('c', bg);
+    const ov = document.createElement('div'); ov.setAttribute('data-bt-overlay', '');
+    ov.style.cssText = `position:fixed;z-index:9999;pointer-events:none;background:${bg};left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px`;
+    document.body.appendChild(ov);
+    ov.animate([
+      { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' },
+      { left: '0px', top: '0px', width: innerWidth + 'px', height: innerHeight + 'px' },
+    ], { duration: 850, easing: 'cubic-bezier(0.7, 0, 0.2, 1)', fill: 'forwards' }).onfinish = () => { location.href = url.href; };
+  }
+  arrive(hero, color) {
+    const r = hero.getBoundingClientRect();
+    const ov = document.createElement('div'); ov.setAttribute('data-bt-overlay', '');
+    ov.style.cssText = `position:fixed;z-index:9999;pointer-events:none;left:0;top:0;width:100vw;height:100vh;background:${color}`;
+    document.body.appendChild(ov);
+    ov.animate([
+      { left: '0px', top: '0px', width: innerWidth + 'px', height: innerHeight + 'px', background: color },
+      { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px', background: '#3a3a39' },
+    ], { duration: 1000, delay: 80, easing: 'cubic-bezier(0.7, 0, 0.2, 1)', fill: 'forwards' }).onfinish = () => {
+      ov.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' }).onfinish = () => ov.remove();
+    };
+  }
+  parallax() {
+    const vh = innerHeight;
+    document.querySelectorAll('[data-py]').forEach(el => {
+      const r = el.parentNode.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) return;
+      const d = (r.top + r.height / 2 - vh / 2) / vh;
+      el.style.transform = `translate3d(0, ${(-d * r.height * 0.07).toFixed(1)}px, 0)`;
+    });
+  }
+  componentDidMount() {
+    { let tries = 0; const tryFx = () => { if (this.footRef && this.footRef.current) { this.initFooterFx(); this.initPixels(); this.initChroma(); } else if (tries++ < 600) this.footTry = requestAnimationFrame(tryFx); }; this.footTry = requestAnimationFrame(tryFx); }
+    window.addEventListener('resize', this.onResize); this.onResize();
+    this.fitWordmark(); window.addEventListener('resize', this.fitWordmark);
+    if (document.fonts) document.fonts.ready.then(this.fitWordmark);
+    window.scrollTo(0, 0);
+    if (PAGE_TRANSITIONS) this.initPageTransitions();
+    const qs = new URLSearchParams(location.search);
+    const fromCard = qs.get('from') === 'card', cardColor = qs.get('c') || '#3a3a39';
+    if (fromCard) { qs.delete('from'); qs.delete('c'); history.replaceState(null, '', location.pathname + (qs.toString() ? '?' + qs : '')); }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const hero = document.querySelector('[data-hero="true"]');
+    if (hero && fromCard) hero.removeAttribute('data-rv');
+    this.revealOnView(this.mainRef.current);
+    if (hero) {
+      if (fromCard) this.arrive(hero, cardColor);
+      const z = hero.querySelector('[data-zoom]');
+      if (z) z.animate([{ transform: 'scale(1.05)' }, { transform: 'scale(1)' }], { duration: 2600, delay: fromCard ? 700 : 200, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'both' });
+    }
+    this.revealOnView(this.footRef.current);
+    this.drawLines();
+    this.raf = requestAnimationFrame(this.tick);
+  }
+  componentDidUpdate(pp, ps) { if ((ps.w < 768) !== (this.state.w < 768)) this.drawLines(); }
+  initFooterFx() {
+    const f = this.footRef && this.footRef.current; if (!f || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const prev = f.previousElementSibling; if (!prev) return;
+    f.style.zIndex = '0'; if (getComputedStyle(prev).position === 'static') prev.style.position = 'relative'; prev.style.zIndex = '2';
+    const kids = [...f.children];
+    const loop = () => {
+      const vh = innerHeight, r = f.getBoundingClientRect(), span = Math.min(vh, r.height);
+      const p = Math.min(1, Math.max(0, (vh - r.top) / span));
+      const e = 1 - Math.pow(1 - p, 3);
+      kids.forEach((k, i) => { const d = Math.min(1, Math.max(0, e * 2.2 - i * 0.25)); k.style.opacity = d.toFixed(3); k.style.translate = '0 ' + ((1 - d) * 32).toFixed(1) + 'px'; });
+      this.footRaf = requestAnimationFrame(loop);
+    };
+    this.footRaf = requestAnimationFrame(loop);
+  }
+  initPixels() {
+    const wm = this.wmRef && this.wmRef.current; if (!wm || !matchMedia('(hover: hover)').matches) return;
+    const box = this.footRef.current, wmBox = wm.parentNode.parentNode; if (!box) return;
+    [...box.children].forEach(k => { if (getComputedStyle(k).position === 'static') k.style.position = 'relative'; k.style.zIndex = '1'; });
+    const cv = document.createElement('canvas'); cv.setAttribute('aria-hidden', 'true');
+    cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none';
+    box.insertBefore(cv, box.firstChild);
+    const ctx = cv.getContext('2d'); let W = 0, H = 0, cols = 0, rows = 0, S = 14, G = 3, cells = [], wmY = 0, mx = -1e4, my = -1e4, raf = 0, last = 0;
+    const size = () => {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(2, devicePixelRatio || 1);
+      W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      S = Math.max(10, Math.round(W / 110)); cols = Math.ceil(W / S); rows = Math.ceil(H / S); cells = new Float32Array(cols * rows);
+      wmY = wmBox.getBoundingClientRect().top - r.top;
+    };
+    size(); window.addEventListener('resize', size);
+    const draw = (t) => {
+      const dt = Math.min(64, t - (last || t)); last = t; let alive = false;
+      ctx.clearRect(0, 0, W, H);
+      for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+        const i = y * cols + x, cx = x * S + S / 2, cy = y * S + S / 2;
+        const d = Math.hypot(cx - mx, cy - my), hit = Math.max(0, 1 - d / (S * (cy >= wmY ? 5 : 3.5)));
+        if (hit > 0 && Math.random() < 0.5) cells[i] = Math.max(cells[i], hit * (0.55 + Math.random() * 0.45));
+        else cells[i] = Math.max(0, cells[i] - dt / 900);
+        const a = cells[i]; if (a <= 0.01) continue; alive = true;
+        const inWm = cy >= wmY, fall = inWm ? (cy - wmY) / Math.max(1, H - wmY) : 0;
+        ctx.globalAlpha = a * (inWm ? 0.55 + 0.45 * fall : 0.3);
+        ctx.fillStyle = '#cfc9bf';
+        const s = (S - G) * (0.5 + 0.5 * a);
+        ctx.fillRect(cx - s / 2, cy - s / 2, s, s);
+      }
+      ctx.globalAlpha = 1;
+      raf = alive || mx > -1e3 ? requestAnimationFrame(draw) : 0;
+    };
+    const kick = () => { if (!raf) { last = 0; raf = requestAnimationFrame(draw); } };
+    box.addEventListener('pointerenter', size);
+    box.addEventListener('pointermove', (e) => { const r = cv.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top;
+      kick(); });
+    box.addEventListener('pointerleave', () => { mx = my = -1e4; kick(); });
+    this.pxStop = () => { cancelAnimationFrame(raf); window.removeEventListener('resize', size); };
+  }
+  initChroma() {
+    const wm = this.wmRef && this.wmRef.current; if (!wm) return;
+    const b = Math.max(1.2, innerWidth / 1200).toFixed(2);
+    wm.style.textShadow = '-' + b + 'px 0 0 rgba(200,40,60,0.42), ' + b + 'px 0 0 rgba(30,80,200,0.42)';
+  }
+  componentWillUnmount() { if (this.pxStop) this.pxStop(); cancelAnimationFrame(this.footRaf); cancelAnimationFrame(this.footTry);
+    document.removeEventListener('click', this.onLinkClick); window.removeEventListener('pageshow', this.onPageShow); 
+    window.removeEventListener('resize', this.onResize); window.removeEventListener('resize', this.fitWordmark);
+    cancelAnimationFrame(this.raf); if (this.lenis) this.lenis.destroy();
+    (this.ios || []).forEach(o => o.disconnect()); (this.lineAnims || []).forEach(a => a.cancel());
+  }
+  renderVals() {
+    const mobile = this.state.w < 768;
+    const p = PROJECTS[this.slug()];
+    if (typeof document !== 'undefined') document.title = p.name + ' — Blacktrama';
+    const meta = [['Cliente', p.cliente], ['Servicios', p.servicios], ['Tipo', p.tipo], ['Año', p.anio]].map(([label, values], i) => ({
+      label, values,
+      style: !mobile && i === 3 ? { textAlign: 'right' } : { minWidth: mobile ? 0 : 'clamp(110px,10vw,200px)' },
+    }));
+    const blocks = p.blocks.map((b, k) => ({ ...b, hero: k === 0 && b.type === 'img', isImg: b.type === 'img', isPair: b.type === 'pair', isCenter: b.type === 'center', isRows: b.type === 'rows' }));
+    const grain = this.props.grain ?? 0.07;
+    const svg = "data:image/svg+xml;utf8," + encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(#n)'/></svg>");
+    const vintage = grain > 0 ? React.createElement('div', { 'aria-hidden': true, style: { position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 50, overflow: 'hidden' } },
+      React.createElement('div', { style: { position: 'absolute', inset: '-10%', backgroundImage: `url("${svg}")`, opacity: grain, animation: 'bt-grain 1s steps(6) infinite' } }),
+      React.createElement('div', { style: { position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.35) 100%)' } })
+    ) : null;
+    const P = 'clamp(16px,1.67vw,32px)';
+    return {
+      p, meta, blocks, vintage,
+      mainRef: this.mainRef, footRef: this.footRef, wmRef: this.wmRef,
+      introGrid: mobile
+        ? { display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: '40px', marginTop: '32px' }
+        : { display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto', gap: '48px', alignItems: 'start', marginTop: 'clamp(32px,3vw,56px)' },
+      metaGrid: mobile
+        ? { margin: 0, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: '28px 24px' }
+        : { margin: 0, display: 'grid', gridTemplateColumns: 'repeat(4, auto)', columnGap: 'clamp(24px,2.5vw,48px)' },
+      rowGrid: mobile
+        ? { display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: '14px', padding: '22px 0 40px', borderTop: '1px solid #2a2a28' }
+        : { display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: '48px', padding: 'clamp(20px,1.6vw,30px) 0 clamp(44px,3.6vw,68px)', borderTop: '1px solid #2a2a28' },
+      pairGrid: { display: 'grid', gridTemplateColumns: mobile ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)', gap: 'clamp(12px,0.85vw,16px)' },
+      centerImg: { position: 'relative', overflow: 'hidden', width: mobile ? '100%' : '57.2%', margin: '0 auto', aspectRatio: '422 / 268' },
+      toTop: () => { if (this.lenis) this.lenis.scrollTo(0, { duration: 1.6 }); else window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      divAxis: mobile ? 'x' : 'y',
+      footDivider: mobile
+        ? { position: 'absolute', left: 0, right: 0, top: 0, height: 1, background: '#e3dfd7', overflow: 'hidden', pointerEvents: 'none' }
+        : { position: 'absolute', top: 0, bottom: 0, left: 0, width: 1, background: '#e3dfd7', overflow: 'hidden', pointerEvents: 'none' },
+      footGrid: mobile
+        ? { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', flex: '1 1 auto' }
+        : { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', minHeight: 0, flex: '1 1 0' },
+      footLeft: mobile
+        ? { display: 'flex', flexDirection: 'column', gap: '56px', padding: '40px ' + P + ' 40px' }
+        : { display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '48px', padding: 'clamp(32px,2vw,40px) ' + P + ' clamp(24px,1.6vw,28px)' },
+      footRight: mobile
+        ? { position: 'relative', padding: '40px ' + P + ' 56px' }
+        : { position: 'relative', padding: 'clamp(28px,1.8vw,36px) ' + P },
+    };
+  }
+}
+</script>
+</body>
+</html>

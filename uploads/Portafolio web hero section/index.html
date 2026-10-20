@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blacktrama — Diseño web y UX/UI</title>
+<meta name="description" content="Blacktrama diseña webs y productos digitales tejidos con claridad y carácter.">
+<script src="./js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#0c0c0b;color:#ece8e1;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#ece8e1;text-decoration:none}
+a:hover{color:#ffd60a}
+input::placeholder,textarea::placeholder{color:#8a8780;opacity:1}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+@keyframes bt-grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,2%)}33%{transform:translate(2%,-4%)}50%{transform:translate(-4%,-1%)}67%{transform:translate(3%,3%)}83%{transform:translate(-1%,4%)}100%{transform:translate(0,0)}}
+</style>
+</helmet>
+<section data-screen-label="01 Hero" ref="{{ rootRef }}" style="position:relative;min-height:100svh;display:flex;flex-direction:column;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;overflow:hidden">
+  <header style="position:relative;height:clamp(72px,6.67vw,128px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,1.67vw,32px);margin-right:clamp(16px,1.67vw,32px);padding-right:0;border-bottom:1px solid #2a2a28;z-index:2">
+    <sc-if value="{{ showBlocks }}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" data-enter="block" data-d="0.15" data-par="0.6" style="position:absolute;top:0;left:52.08%;width:16.67vw;height:100%;background:#3a3a39"></div>
+    </sc-if>
+    <a href="#" data-enter="fade" data-d="0.05" style="position:relative;font-size:clamp(17px,1.15vw,22px);font-weight:500;letter-spacing:-0.02em;color:#ece8e1">Blacktrama</a>
+    <nav data-enter="fade" data-d="0.15" style="position:relative;display:flex;gap:clamp(20px,2.1vw,40px);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(11px,0.63vw,12px);letter-spacing:0.08em;text-transform:uppercase">
+      <a href="trabajos.html" style="color:#8a8780;padding:6px 0;border-bottom:1px solid transparent" style-hover="color:#ece8e1">Trabajo</a>
+      <a href="contacto.html" style="color:#ece8e1;padding:6px 0;border-bottom:1px solid #ece8e1" style-hover="color:#ffd60a;border-bottom-color:#ffd60a">Contacto</a>
+    </nav>
+  </header>
+
+  <div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(56px,5.5vw,104px) clamp(16px,1.67vw,32px);margin-left:clamp(16px,1.67vw,32px);margin-right:clamp(16px,1.67vw,32px);border-bottom:1px solid #2a2a28">
+    <sc-if value="{{ showBlocks }}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" data-enter="block" data-d="0.3" data-par="1.4" style="position:absolute;top:0;left:calc(-1 * clamp(16px,1.67vw,32px));width:clamp(56px,8.33vw,160px);height:clamp(110px,15.6vw,300px);background:#3a3a39"></div>
+      <div aria-hidden="true" data-enter="block" data-d="0.45" data-par="1" style="position:absolute;bottom:0;left:clamp(0px,0.85vw,16px);width:clamp(96px,15.6vw,300px);height:clamp(56px,9.9vw,190px);background:#3a3a39"></div>
+      <div aria-hidden="true" data-enter="block" data-d="0.6" data-par="1.8" style="position:absolute;bottom:0;right:0;width:clamp(72px,11.46vw,220px);height:clamp(120px,16.67vw,320px);background:#3a3a39"></div>
+    </sc-if>
+    <h1 style="position:relative;margin:0;text-align:center;text-transform:uppercase;font-weight:400;font-size:clamp(44px,12vw,168px);line-height:0.9;letter-spacing:-0.03em;color:#ece8e1">
+      <span data-enter="line" data-d="0.35" style="display:block">Arte,</span>
+      <span data-enter="line" data-d="0.5" style="display:block">Experiencia</span>
+      <span data-enter="line" data-d="0.65" style="display:block">Y <em style="font-style:italic;color:#ffd60a;letter-spacing:-0.03em">Trama</em></span>
+    </h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:{{ bottomCols }};gap:{{ bottomGap }};align-items:start;padding:clamp(20px,1.6vw,28px) clamp(16px,1.67vw,32px) clamp(40px,3.6vw,68px)">
+    <div data-enter="fade" data-d="0.9" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(11px,0.63vw,12px);letter-spacing:0.08em;text-transform:uppercase;color:#8a8780;padding-top:4px">Diseño web · UX/UI</div>
+    <p data-enter="fade" data-d="1" style="margin:0;max-width:34em;justify-self:center;text-align:{{ subAlign }};font-size:clamp(16px,1.04vw,20px);line-height:1.5;color:#ece8e1;text-wrap:pretty">Diseño webs y productos digitales. Cada proyecto, tejido con claridad y carácter.</p>
+    <a href="#trabajo" data-enter="fade" data-d="1.1" style="justify-self:{{ linkJustify }};display:flex;gap:8px;align-items:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(11px,0.63vw,12px);letter-spacing:0.08em;text-transform:uppercase;color:#ece8e1;padding-top:4px" style-hover="color:#ffd60a">Ver trabajos <i class="ph ph-arrow-down" aria-hidden="true" style="font-size:1.1em;line-height:1;"></i></a>
+  </div>
+  {{ vintage }}
+</section>
+<section data-screen-label="02 Manifiesto" ref="{{ manRef }}" style="position:relative;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;padding:0 clamp(16px,1.67vw,32px)">
+  <div style="border-top:1px solid #2a2a28;padding:clamp(120px,10.5vw,200px) 0 clamp(120px,11vw,210px)">
+    <p ref="{{ wordsRef }}" style="margin:0;text-align:{{ manAlign }};font-size:clamp(30px,3.33vw,64px);line-height:1.12;letter-spacing:-0.02em;font-weight:400;text-wrap:pretty"><span data-w="" style="display:inline-block">Creo</span> <span data-w="" style="display:inline-block">que</span> <span data-w="" style="display:inline-block">el</span> <span data-w="" style="display:inline-block">arte</span> <span data-w="" style="display:inline-block">y</span> <span data-w="" style="display:inline-block">el</span> <span data-w="" style="display:inline-block">orden</span> <span data-w="" style="display:inline-block">no</span> <span data-w="" style="display:inline-block">compiten:</span> <span data-w="" style="display:inline-block"><em style="font-style:italic;color:#ffd60a">se</em></span> <span data-w="" style="display:inline-block"><em style="font-style:italic;color:#ffd60a">tejen</em>.</span> <span data-w="" style="display:inline-block">Cuando</span> <span data-w="" style="display:inline-block">la</span> <span data-w="" style="display:inline-block">expresión</span> <span data-w="" style="display:inline-block">tiene</span> <span data-w="" style="display:inline-block">una</span> <span data-w="" style="display:inline-block">trama</span> <span data-w="" style="display:inline-block">que</span> <span data-w="" style="display:inline-block">la</span> <span data-w="" style="display:inline-block">sostiene,</span> <span data-w="" style="display:inline-block">la</span> <span data-w="" style="display:inline-block">web</span> <span data-w="" style="display:inline-block">se</span> <span data-w="" style="display:inline-block">entiende</span></p>
+    <p ref="{{ disfrutaRef }}" style="margin:clamp(120px,12.5vw,240px) 0 0 50%;font-size:clamp(30px,3.33vw,64px);line-height:1.12;letter-spacing:-0.02em;font-weight:400;will-change:transform,opacity,filter">y se disfruta.</p>
+  </div>
+</section>
+<section data-screen-label="03 Trabajo" id="trabajo" ref="{{ workRef }}" style="position:relative;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;padding:0 clamp(16px,1.67vw,32px)">
+  <div style="border-top:1px solid #2a2a28"></div>
+  <div style="position:sticky;top:0;height:100svh;display:flex;justify-content:center;align-items:center;z-index:0;pointer-events:none">
+    <h2 ref="{{ workTitleRef }}" style="margin:0;will-change:opacity;text-align:center;text-transform:uppercase;font-weight:400;font-size:clamp(40px,11vw,210px);line-height:0.9;letter-spacing:-0.03em;color:#ece8e1">
+      <span data-rv="line" style="display:block">Trabajo</span>
+      <span data-rv="line" style="display:block">Seleccionado</span>
+    </h2>
+  </div>
+  <div style="position:relative;z-index:1;margin-top:-18svh;container-type:inline-size">
+    <div style="{{ gridStyle }}">
+      <sc-for list="{{ work }}" as="item" hint-placeholder-count="6">
+        <a href="{{ item.href }}" data-rv="card" style="{{ item.pos }}">
+          <div data-rv-img="" style="aspect-ratio:{{ item.ratio }};background:#3a3a39"></div>
+          <div style="margin-top:clamp(12px,0.94vw,18px);font-size:clamp(15px,0.94vw,18px);line-height:1.3;color:#ece8e1;letter-spacing:-0.01em">{{ item.name }}</div>
+          <div style="margin-top:6px;font-size:clamp(13px,0.78vw,15px);line-height:1.4;color:#8a8780;text-wrap:pretty">{{ item.meta }}</div>
+        </a>
+      </sc-for>
+    </div>
+    <div style="display:flex;justify-content:center;padding:clamp(96px,8vw,160px) 0 clamp(120px,10vw,200px)">
+      <a href="trabajos.html" style="display:flex;align-items:center;justify-content:space-between;gap:48px;min-width:clamp(240px,14.7vw,283px);height:clamp(52px,3.3vw,63px);padding:0 28px;background:#ece8e1;color:#0c0c0b;font-size:clamp(14px,0.83vw,16px);font-weight:500;letter-spacing:-0.01em" style-hover="background:#ffd60a;color:#0c0c0b">Ver todos los trabajos <i class="ph ph-arrow-right" aria-hidden="true" style="font-size:1.1em;line-height:1;"></i></a>
+    </div>
+  </div>
+</section>
+<section data-screen-label="04 Testimonios" ref="{{ testRef }}" style="position:relative;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;padding:0 clamp(16px,1.67vw,32px)">
+  <div style="{{ testGrid }}">
+    <div style="{{ testLeft }}">
+      <div data-sp="0.08"><figure data-rv="quote" style="margin:0;max-width:16em;font-size:clamp(28px,2.7vw,52px)">
+        <blockquote style="margin:0;font-size:1em;line-height:1.08;letter-spacing:-0.02em;font-weight:400;color:#ece8e1;text-wrap:pretty"><span style="color:#ffd60a">“</span>Ahora la gente reserva desde el celular sin llamarnos. Entendió el negocio antes de diseñar una sola pantalla.<span style="color:#ffd60a">”</span></blockquote>
+        <figcaption style="margin-top:clamp(24px,2.1vw,40px);font-size:clamp(15px,1.04vw,20px);line-height:1.4;color:#8a8780">Lucía Paredes, directora de Clínica Sonrisa</figcaption>
+      </figure></div>
+    </div>
+    <div style="{{ testRight }}">
+      <div data-sp="0.18"><figure data-rv="quote" style="margin:0;max-width:16em;font-size:clamp(28px,2.7vw,52px)">
+        <blockquote style="margin:0;font-size:1em;line-height:1.08;letter-spacing:-0.02em;font-weight:400;color:#ece8e1;text-wrap:pretty"><span style="color:#ffd60a">“</span>Cada decisión venía con una razón. El checkout pasó de cinco pasos a dos y se nota en los pedidos.<span style="color:#ffd60a">”</span></blockquote>
+        <figcaption style="margin-top:clamp(24px,2.1vw,40px);font-size:clamp(15px,1.04vw,20px);line-height:1.4;color:#8a8780">Martín Rojas, fundador de Tienda Norte</figcaption>
+      </figure></div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="05 Contacto" id="contacto" ref="{{ ctaRef }}" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;padding:clamp(96px,8vw,160px) clamp(16px,1.67vw,32px) clamp(24px,2.5vw,48px)">
+  <div data-sp="-0.2" aria-hidden="true" style="position:absolute;left:0;right:0;top:-15%;bottom:-15%;background:#0c0c0b;filter:sepia(0.1) contrast(1.03)">
+    <video ref="{{ skyRef }}" src="assets/sky.webm" poster="assets/sky-poster.jpg" muted="" loop="" playsinline="" preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;will-change:opacity,filter"></video>
+  </div>
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(12,12,11,0.9) 0%,rgba(12,12,11,0) 22%,rgba(18,44,78,0) 40%,rgba(18,44,78,0.3) 70%,rgba(14,34,62,0.6) 100%)"></div>
+  <div style="{{ ctaGrid }}">
+    <div style="container-type:inline-size;min-width:0">
+      <h2 style="margin:0;text-transform:uppercase;font-weight:400;font-size:clamp(44px,12.5cqw,168px);line-height:0.88;letter-spacing:-0.03em;color:#ece8e1">
+        <span data-rv="line" style="display:block">Trabajemos</span>
+        <span data-rv="line" style="display:block"><em style="font-style:italic;color:#ffd60a">Juntos</em></span>
+      </h2>
+    </div>
+    <div data-rv="quote" style="background:linear-gradient(180deg,#2c2c2b 0%,#141413 100%);border:1px solid #3a3a39;padding:clamp(28px,2.5vw,48px)">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;min-height:360px;justify-content:center">
+          <div style="font-size:clamp(22px,1.35vw,26px);line-height:1.2;letter-spacing:-0.01em">Gracias. Te respondo pronto<em style="font-style:italic;color:#ffd60a">.</em></div>
+          <button type="button" onClick="{{ reset }}" style="align-self:flex-start;background:none;border:0;padding:0;font:inherit;font-size:15px;color:#8a8780;cursor:pointer;border-bottom:1px solid #8a8780" style-hover="color:#ece8e1;border-bottom-color:#ece8e1">Enviar otro mensaje</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:clamp(32px,2.1vw,40px)">
+          <div style="font-size:clamp(22px,1.35vw,26px);line-height:1.2;letter-spacing:-0.01em">Cuéntame qué tienes en mente</div>
+          <label style="display:flex;flex-direction:column;gap:clamp(10px,0.9vw,16px)">
+          <span style="font-size:clamp(13px,0.73vw,14px);color:#8a8780">Nombre</span>
+          <input name="nombre" type="text" required="" placeholder="Cómo te llamas" style="width:100%;background:transparent;border:0;border-bottom:1px solid #4a4a48;border-radius:0;outline:none;padding:0 0 clamp(16px,1.25vw,24px);font:inherit;font-size:clamp(17px,1.04vw,20px);line-height:1.4;color:#ece8e1" style-focus="border-bottom-color:#ece8e1">
+        </label>
+          <label style="display:flex;flex-direction:column;gap:clamp(10px,0.9vw,16px)">
+          <span style="font-size:clamp(13px,0.73vw,14px);color:#8a8780">Correo o WhatsApp</span>
+          <input name="contacto" type="text" required="" placeholder="Dónde te respondo" style="width:100%;background:transparent;border:0;border-bottom:1px solid #4a4a48;border-radius:0;outline:none;padding:0 0 clamp(16px,1.25vw,24px);font:inherit;font-size:clamp(17px,1.04vw,20px);line-height:1.4;color:#ece8e1" style-focus="border-bottom-color:#ece8e1">
+        </label>
+          <label style="display:flex;flex-direction:column;gap:clamp(10px,0.9vw,16px)">
+          <span style="font-size:clamp(13px,0.73vw,14px);color:#8a8780">Qué necesitas</span>
+          <textarea name="mensaje" rows="3" required="" placeholder="Una web nueva, un rediseño, un prototipo…" style="width:100%;background:transparent;border:0;border-bottom:1px solid #4a4a48;border-radius:0;outline:none;padding:0 0 clamp(16px,1.25vw,24px);font:inherit;font-size:clamp(17px,1.04vw,20px);line-height:1.4;color:#ece8e1;resize:none" style-focus="border-bottom-color:#ece8e1"></textarea>
+        </label>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+            <button type="submit" style="display:flex;align-items:center;justify-content:space-between;gap:40px;min-width:165px;height:clamp(52px,3.1vw,59px);padding:0 28px;background:#ece8e1;color:#0c0c0b;border:0;border-radius:0;font:inherit;font-size:clamp(16px,0.94vw,18px);font-weight:500;cursor:pointer" style-hover="background:#ffd60a">Enviar <i class="ph ph-arrow-right" aria-hidden="true" style="font-size:1.1em;line-height:1;"></i></button>
+            <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-size:clamp(14px,0.78vw,15px);color:#ece8e1;padding-bottom:4px;border-bottom:2px solid #ece8e1" style-hover="color:#ffd60a;border-bottom-color:#ffd60a"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true" style="font-size:1.1em;line-height:1;font-size:1.25em"></i> o escríbeme por WhatsApp</a>
+          </div>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+<footer data-screen-label="06 Footer" ref="{{ footRef }}" style="position:relative;background:#ece8e1;color:#0c0c0b;font-family:'Mona Sans',Helvetica,Arial,sans-serif">
+  <div style="padding:clamp(12px,1.25vw,24px) clamp(16px,1.67vw,32px) clamp(16px,1.8vw,34px);overflow:hidden">
+    <div style="width:100%">
+      <span ref="{{ wmRef }}" data-rv="line" style="display:inline-block;white-space:nowrap;font-size:19.5vw;line-height:0.8;letter-spacing:-0.045em;font-weight:400;padding-bottom:0.02em">Blacktrama</span>
+    </div>
+  </div>
+  <div style="{{ footGrid }}">
+    <div data-line="x" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:#e3dfd7;pointer-events:none;overflow:hidden"><div data-draw="" style="position:absolute;inset:0;background:#0c0c0b;opacity:0.55"></div></div>
+    <div style="{{ footLeft }}">
+      <div style="display:flex;flex-direction:column;gap:clamp(12px,1vw,20px)">
+        <a href="mailto:hola@blacktrama.studio" style="color:#0c0c0b;text-decoration:none;font-size:clamp(26px,2.5vw,48px);line-height:1.1;letter-spacing:-0.02em;overflow-wrap:anywhere" style-hover="color:#6b6862">hola@blacktrama.studio</a>
+        <a href="#" style="color:#0c0c0b;text-decoration:none;font-size:clamp(16px,1.04vw,20px);display:inline-flex;align-items:center;gap:8px;align-self:flex-start" style-hover="color:#6b6862"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true" style="font-size:1.1em;line-height:1;font-size:1.25em"></i> WhatsApp</a>
+      </div>
+      <div style="display:flex;gap:clamp(24px,1.7vw,32px);font-size:clamp(15px,0.89vw,17px)">
+        <a href="#" style="color:#0c0c0b;text-decoration:none;display:inline-flex;align-items:center;gap:8px" style-hover="color:#6b6862"><i class="ph-fill ph-instagram-logo" aria-hidden="true" style="font-size:1.25em;line-height:1;"></i> Instagram</a>
+        <a href="#" style="color:#0c0c0b;text-decoration:none;display:inline-flex;align-items:center;gap:8px" style-hover="color:#6b6862"><i class="ph-fill ph-behance-logo" aria-hidden="true" style="font-size:1.25em;line-height:1;"></i> Behance</a>
+      </div>
+    </div>
+    <div style="{{ footRight }}">
+      <div data-line="{{ divAxis }}" aria-hidden="true" style="{{ footDivider }}"><div data-draw="" style="position:absolute;inset:0;background:#0c0c0b;opacity:0.55"></div></div>
+      <nav style="display:flex;flex-direction:column;font-size:clamp(32px,2.7vw,52px);line-height:1.15;letter-spacing:-0.02em">
+        <a href="trabajos.html" style="color:#0c0c0b;text-decoration:none;align-self:flex-start" style-hover="color:#6b6862">Trabajo</a>
+        <a href="contacto.html" style="color:#0c0c0b;text-decoration:none;align-self:flex-start;font-style:italic" style-hover="color:#6b6862">Contacto</a>
+      </nav>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;position:relative;padding:clamp(24px,2vw,38px) clamp(16px,1.67vw,32px) clamp(28px,2.2vw,40px);font-size:clamp(13px,0.78vw,15px)">
+    <div data-line="x" aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:#e3dfd7;pointer-events:none;overflow:hidden"><div data-draw="" style="position:absolute;inset:0;background:#0c0c0b;opacity:0.55"></div></div>
+    <span style="color:#7a766f">© 2026 Blacktrama</span>
+    <button type="button" onClick="{{ toTop }}" style="background:none;border:0;padding:0;font:inherit;color:#0c0c0b;cursor:pointer;display:inline-flex;align-items:center;gap:6px" style-hover="color:#6b6862">Volver arriba <i class="ph ph-arrow-up" aria-hidden="true" style="font-size:1.1em;line-height:1;"></i></button>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showBlocks&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.07,&quot;min&quot;:0,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Vintage&quot;},&quot;parallax&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:12,&quot;min&quot;:0,&quot;max&quot;:80,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Movimiento&quot;},&quot;smooth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.09,&quot;min&quot;:0.03,&quot;max&quot;:0.3,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Movimiento&quot;}}">
+const PAGE_TRANSITIONS = false; // blur entre páginas + tarjeta→case study (desactivado por ahora)
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  testRef = React.createRef(); ctaRef = React.createRef(); skyRef = React.createRef();
+  footRef = React.createRef(); wmRef = React.createRef();
+  drawLines() {
+    const root = this.footRef.current; if (!root || !root.animate) return;
+    (this.lineAnims || []).forEach(a => a.cancel());
+    this.lineAnims = [...root.querySelectorAll('[data-line]')].map((el, i) => {
+      const d = el.querySelector('[data-draw]'); if (!d) return null;
+      const y = el.dataset.line === 'y', S = y ? 'scaleY' : 'scaleX';
+      const o0 = y ? 'center top' : (i % 2 ? 'right center' : 'left center');
+      const o1 = y ? 'center bottom' : (i % 2 ? 'left center' : 'right center');
+      return d.animate([
+        { transform: S + '(0)', transformOrigin: o0, offset: 0 },
+        { transform: S + '(1)', transformOrigin: o0, offset: 0.45 },
+        { transform: S + '(1)', transformOrigin: o1, offset: 0.55 },
+        { transform: S + '(0)', transformOrigin: o1, offset: 1 },
+      ], { duration: y ? 5200 : 4600, delay: i * 700, iterations: Infinity, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'both' });
+    }).filter(Boolean);
+  }
+  componentDidUpdate(pp, ps) { if (ps.w !== this.state.w && (ps.w < 768) !== (this.state.w < 768)) this.drawLines(); }
+  fitWordmark = () => {
+    const el = this.wmRef.current; if (!el) return;
+    el.style.fontSize = '100px';
+    const w = el.parentNode.clientWidth, sw = el.getBoundingClientRect().width;
+    if (sw > 0) el.style.fontSize = (100 * w / sw).toFixed(2) + 'px';
+  };
+  initSky() {
+    const v = this.skyRef.current; if (!v) return;
+    v.muted = true;
+    this.skyIO = new IntersectionObserver(([en]) => { if (en.isIntersecting) v.play().catch(() => {}); else v.pause(); }, { rootMargin: '200px 0px' });
+    this.skyIO.observe(v.parentNode.parentNode);
+  }
+  skyFx() {
+    const v = this.skyRef.current, sec = this.ctaRef.current; if (!v || !sec) return;
+    const vh = window.innerHeight, top = sec.getBoundingClientRect().top;
+    const p = Math.min(1, Math.max(0, (vh * 0.9 - top) / (vh * 0.75)));
+    const e = p * p * (3 - 2 * p);
+    v.style.opacity = e.toFixed(3);
+    v.style.filter = e < 0.999 ? `brightness(${(0.35 + 0.65 * e).toFixed(3)}) saturate(${(0.4 + 0.6 * e).toFixed(3)})` : 'none';
+  }
+  speedFx() {
+    const vh = window.innerHeight;
+    document.querySelectorAll('[data-sp]').forEach(el => {
+      const r = el.parentNode.getBoundingClientRect();
+      const dist = r.top + r.height / 2 - vh / 2;
+      el.style.transform = `translate3d(0, ${(dist * parseFloat(el.dataset.sp)).toFixed(1)}px, 0)`;
+    });
+  }
+  workRef = React.createRef(); workTitleRef = React.createRef();
+  titleFx() {
+    const t = this.workTitleRef.current, sec = this.workRef.current; if (!t || !sec) return;
+    const card = sec.querySelector('[data-rv="card"]'); if (!card) return;
+    const vh = window.innerHeight, top = card.getBoundingClientRect().top;
+    const p = Math.min(1, Math.max(0, (vh * 0.8 - top) / (vh * 0.4)));
+    t.style.opacity = (1 - p * 0.65).toFixed(3);
+  }
+  revealOnView(root) {
+    if (!root || !root.animate) return;
+    const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const els = [...root.querySelectorAll('[data-rv]')];
+    els.forEach(el => { el.style.opacity = 0; });
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target; io.unobserve(el);
+        el.style.opacity = '';
+        if (el.dataset.rv === 'line') {
+          const i = [...el.parentNode.children].indexOf(el);
+          el.animate([{ opacity: 0, transform: 'translateY(0.25em)', filter: 'blur(10px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 1200, delay: i * 140, easing: ease, fill: 'backwards' });
+        } else {
+          el.animate([{ opacity: 0, transform: 'translateY(60px)' }, { opacity: 1, transform: 'none' }], { duration: 1100, easing: ease, fill: 'backwards' });
+          const img = el.querySelector('[data-rv-img]');
+          if (img) img.animate([{ clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)' }], { duration: 1300, easing: ease, fill: 'backwards' });
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(el => io.observe(el));
+    (this.ios = this.ios || []).push(io);
+  }
+  manRef = React.createRef(); wordsRef = React.createRef(); disfrutaRef = React.createRef();
+  revealWords() {
+    const p = this.wordsRef.current; if (!p || !p.animate) return;
+    const ws = p.querySelectorAll('[data-w]');
+    ws.forEach(w => { w.style.opacity = 0; });
+    this.io = new IntersectionObserver((ents) => {
+      if (!ents.some(e => e.isIntersecting)) return;
+      this.io.disconnect();
+      ws.forEach((w, i) => {
+        w.style.opacity = '';
+        w.animate([{ opacity: 0, transform: 'translateY(0.4em)', filter: 'blur(8px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }],
+          { duration: 900, delay: i * 45, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' });
+      });
+    }, { threshold: 0.35 });
+    this.io.observe(p);
+  }
+  scrollFx() {
+    const el = this.disfrutaRef.current; if (!el) return;
+    const r = el.getBoundingClientRect(), vh = window.innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * 0.98 - r.top) / (vh * 0.3)));
+    const e = 1 - Math.pow(1 - p, 3), q = 1 - e;
+    el.style.opacity = e.toFixed(3);
+    el.style.transform = `translate3d(${(q * 6).toFixed(2)}vw, ${(q * 40).toFixed(1)}px, 0)`;
+    el.style.filter = q > 0.01 ? `blur(${(q * 12).toFixed(1)}px)` : 'none';
+  }
+  mx = 0; my = 0; cx = 0; cy = 0;
+  onMove = (e) => { this.mx = e.clientX / window.innerWidth - 0.5; this.my = e.clientY / window.innerHeight - 0.5; };
+  tick = (t) => {
+    if (!this.lenis && window.Lenis) this.lenis = new window.Lenis({ lerp: this.props.smooth ?? 0.09, anchors: true });
+    if (this.lenis) this.lenis.raf(t);
+    const root = this.rootRef.current;
+    this.cx += (this.mx - this.cx) * 0.06; this.cy += (this.my - this.cy) * 0.06;
+    const amt = this.props.parallax ?? 12;
+    if (root) root.querySelectorAll('[data-par]').forEach(el => {
+      const d = parseFloat(el.dataset.par);
+      el.style.transform = `translate3d(${(this.cx * amt * d).toFixed(2)}px, ${(this.cy * amt * d).toFixed(2)}px, 0)`;
+    });
+    this.scrollFx();
+    this.titleFx();
+    this.speedFx();
+    this.skyFx();
+    this.raf = requestAnimationFrame(this.tick);
+  };
+  enter() {
+    const root = this.rootRef.current;
+    if (!root || !root.animate) return;
+    const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    root.querySelectorAll('[data-enter]').forEach(el => {
+      const d = parseFloat(el.dataset.d || 0) * 1000, t = el.dataset.enter;
+      const kf = t === 'block'
+        ? [{ clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)' }]
+        : t === 'line'
+        ? [{ opacity: 0, transform: 'translateY(0.25em)', filter: 'blur(10px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }]
+        : [{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }];
+      el.animate(kf, { duration: t === 'block' ? 1100 : t === 'line' ? 1200 : 800, delay: d, easing: ease, fill: 'backwards' });
+    });
+  }
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1920, sent: false };
+  onResize = () => this.setState({ w: window.innerWidth });
+
+  initPageTransitions() {
+    const EOUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    const qs = new URLSearchParams(location.search);
+    if (qs.get('from') !== 'card' && document.body.animate) document.body.animate([{ filter: 'blur(14px)', opacity: 0 }, { filter: 'blur(0px)', opacity: 1 }], { duration: 900, easing: EOUT });
+    this.onPageShow = (e) => { if (e.persisted) { this.leaving = false; document.body.getAnimations().forEach(a => a.cancel()); document.querySelectorAll('[data-bt-overlay]').forEach(n => n.remove()); } };
+    window.addEventListener('pageshow', this.onPageShow);
+    this.onLinkClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a || a.target === '_blank') return;
+      const raw = a.getAttribute('href'); if (!raw || raw.startsWith('#') || /^(mailto|tel):/.test(raw)) return;
+      const url = new URL(raw, location.href); if (url.origin !== location.origin) return;
+      e.preventDefault();
+      if (url.pathname === location.pathname && url.search === location.search) {
+        const t = url.hash && document.querySelector(url.hash);
+        if (this.lenis) this.lenis.scrollTo(t || 0); else window.scrollTo({ top: t ? t.getBoundingClientRect().top + scrollY : 0, behavior: 'smooth' });
+        return;
+      }
+      const img = a.querySelector('[data-card-img],[data-rv-img]');
+      if (img) this.expandTo(img, url); else this.leave(url.href);
+    };
+    document.addEventListener('click', this.onLinkClick);
+  }
+  leave(href) {
+    if (this.leaving) return; this.leaving = true;
+    document.body.animate([{ filter: 'blur(0px)', opacity: 1 }, { filter: 'blur(14px)', opacity: 0 }], { duration: 550, easing: 'cubic-bezier(0.7, 0, 0.84, 0)', fill: 'forwards' }).onfinish = () => { location.href = href; };
+  }
+  expandTo(el, url) {
+    if (this.leaving) return; this.leaving = true;
+    const r = el.getBoundingClientRect(), bg = getComputedStyle(el).backgroundColor;
+    url.searchParams.set('from', 'card'); url.searchParams.set('c', bg);
+    const ov = document.createElement('div'); ov.setAttribute('data-bt-overlay', '');
+    ov.style.cssText = `position:fixed;z-index:9999;pointer-events:none;background:${bg};left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px`;
+    document.body.appendChild(ov);
+    ov.animate([
+      { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' },
+      { left: '0px', top: '0px', width: innerWidth + 'px', height: innerHeight + 'px' },
+    ], { duration: 850, easing: 'cubic-bezier(0.7, 0, 0.2, 1)', fill: 'forwards' }).onfinish = () => { location.href = url.href; };
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize); this.onResize();
+    if (PAGE_TRANSITIONS) this.initPageTransitions();
+    this.fitWordmark(); window.addEventListener('resize', this.fitWordmark);
+    if (document.fonts) document.fonts.ready.then(this.fitWordmark);
+    this.initSky();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    this.enter();
+    this.revealWords();
+    this.revealOnView(this.workRef.current);
+    this.revealOnView(this.testRef.current);
+    this.revealOnView(this.ctaRef.current);
+    this.revealOnView(this.footRef.current);
+    this.drawLines();
+    window.addEventListener('mousemove', this.onMove);
+    this.raf = requestAnimationFrame(this.tick);
+  }
+  componentWillUnmount() { document.removeEventListener('click', this.onLinkClick); window.removeEventListener('pageshow', this.onPageShow); window.removeEventListener('resize', this.onResize); window.removeEventListener('resize', this.fitWordmark); window.removeEventListener('mousemove', this.onMove); cancelAnimationFrame(this.raf); if (this.lenis) this.lenis.destroy(); if (this.skyIO) this.skyIO.disconnect(); (this.lineAnims || []).forEach(a => a.cancel()); if (this.io) this.io.disconnect(); (this.ios || []).forEach(o => o.disconnect()); }
+  renderVals() {
+    const mobile = this.state.w < 768;
+    const grain = this.props.grain ?? 0.07;
+    const svg = "data:image/svg+xml;utf8," + encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(#n)'/></svg>");
+    const vintage = grain > 0 ? React.createElement('div', { 'aria-hidden': true, style: { position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 50, overflow: 'hidden' } },
+      React.createElement('div', { style: { position: 'absolute', inset: '-10%', backgroundImage: `url("${svg}")`, opacity: grain, animation: 'bt-grain 1s steps(6) infinite' } }),
+      React.createElement('div', { style: { position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.35) 100%)' } })
+    ) : null;
+    const W = [
+      ['Clínica Sonrisa', 'Diseño web · Rediseño del home y versión mobile', '634 / 389', '0%', 0, '52.8%', '100%', '0'],
+      ['Tienda Norte', 'E-commerce · Catálogo y checkout en dos pasos', '362 / 466', '69.2%', 20.5, '30.1%', '72%', 'auto'],
+      ['Estudio Lumen', 'Diseño web · Portafolio para un estudio de arquitectura', '492 / 311', '14.4%', 43.1, '41%', '88%', '0'],
+      ['Café Ruta', 'Landing page · Carta y reservas en una sola pantalla', '337 / 440', '57.5%', 67.9, '28.1%', '64%', 'auto'],
+      ['Agenda Viva', 'UX/UI · Plataforma de reservas para talleres', '582 / 363', '0%', 79.8, '48.5%', '92%', '0'],
+      ['Nodo Finanzas', 'Concepto · Panel de finanzas personales', '362 / 453', '69.2%', 111.1, '30.1%', '72%', 'auto'],
+    ];
+    const slug = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-');
+    const work = W.map(([name, meta, ratio, left, top, width, mw, ml]) => ({
+      name, meta, ratio, href: 'proyecto.html?p=' + slug(name),
+      pos: mobile
+        ? { display: 'block', position: 'relative', width: mw, marginLeft: ml, textDecoration: 'none' }
+        : { display: 'block', position: 'absolute', left, top: top > 100 ? `calc(${top}cqw + 40px)` : top + 'cqw', width, textDecoration: 'none' },
+    }));
+    const gridStyle = mobile
+      ? { display: 'flex', flexDirection: 'column', gap: '64px' }
+      : { position: 'relative', height: 'calc(148.8cqw + 112px)' };
+    const line = '1px solid #2a2a28', pad = 'clamp(64px,5vw,96px)';
+    const testGrid = mobile
+      ? { display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', borderTop: line }
+      : { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', minHeight: 'clamp(640px,52vw,995px)', borderTop: line };
+    const testLeft = mobile
+      ? { padding: pad + ' 0', borderBottom: line }
+      : { padding: pad + ' clamp(16px,1.67vw,32px) ' + pad + ' 0', borderRight: line };
+    const testRight = mobile
+      ? { padding: pad + ' 0 ' + pad + ' 12%' }
+      : { padding: pad + ' 0 ' + pad + ' clamp(16px,1.67vw,32px)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
+    const wide = this.state.w >= 1200;
+    const ctaGrid = wide
+      ? { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) clamp(400px,27vw,520px)', gap: 'clamp(32px,4vw,80px)', alignItems: 'end' }
+      : { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 'clamp(40px,6vw,64px)' };
+    return {
+      ctaRef: this.ctaRef, ctaGrid, skyRef: this.skyRef,
+      footRef: this.footRef, wmRef: this.wmRef,
+      divAxis: mobile ? 'x' : 'y',
+      footDivider: mobile
+        ? { position: 'absolute', left: 0, right: 0, top: 0, height: 1, background: '#e3dfd7', overflow: 'hidden', pointerEvents: 'none' }
+        : { position: 'absolute', top: 0, bottom: 0, left: 0, width: 1, background: '#e3dfd7', overflow: 'hidden', pointerEvents: 'none' },
+      toTop: () => { if (this.lenis) this.lenis.scrollTo(0, { duration: 1.6 }); else window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      footGrid: mobile
+        ? { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)' }
+        : { position: 'relative', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', minHeight: 'clamp(360px,30.4vw,583px)' },
+      footLeft: mobile
+        ? { display: 'flex', flexDirection: 'column', gap: '56px', padding: '40px clamp(16px,1.67vw,32px) 40px' }
+        : { display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '48px', padding: 'clamp(32px,2vw,40px) clamp(16px,1.67vw,32px) clamp(24px,1.6vw,28px)' },
+      footRight: mobile
+        ? { position: 'relative', padding: '40px clamp(16px,1.67vw,32px) 56px' }
+        : { position: 'relative', padding: 'clamp(28px,1.8vw,36px) clamp(16px,1.67vw,32px)' },
+      sent: this.state.sent, notSent: !this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false }),
+      testRef: this.testRef, testGrid, testLeft, testRight,
+      work, gridStyle, workRef: this.workRef, workTitleRef: this.workTitleRef,
+      rootRef: this.rootRef, manRef: this.manRef, wordsRef: this.wordsRef, disfrutaRef: this.disfrutaRef,
+      manAlign: mobile ? 'left' : 'right',
+      vintage,
+      showBlocks: this.props.showBlocks ?? true,
+      bottomCols: mobile ? 'minmax(0,1fr)' : 'minmax(0,1fr) auto minmax(0,1fr)',
+      bottomGap: mobile ? '16px' : '24px',
+      subAlign: mobile ? 'left' : 'center',
+      linkJustify: mobile ? 'start' : 'end',
+    };
+  }
+}
+</script>
+</body>
+</html>

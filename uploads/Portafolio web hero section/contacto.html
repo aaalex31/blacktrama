@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Blacktrama</title>
+<meta name="description" content="Blacktrama diseña webs y productos digitales tejidos con claridad y carácter.">
+<script src="./js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#0c0c0b;color:#ece8e1;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#ece8e1;text-decoration:none}
+a:hover{color:#ffd60a}
+input::placeholder,textarea::placeholder{color:#7d7a73;opacity:1}
+select option{background:#0c0c0b;color:#ece8e1}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+@keyframes bt-grain{0%{transform:translate(0,0)}17%{transform:translate(-3%,2%)}33%{transform:translate(2%,-4%)}50%{transform:translate(-4%,-1%)}67%{transform:translate(3%,3%)}83%{transform:translate(-1%,4%)}100%{transform:translate(0,0)}}
+</style>
+</helmet>
+<section data-screen-label="01 Contacto" ref="{{ rootRef }}" style="position:relative;min-height:100svh;background:#0c0c0b;color:#ece8e1;font-family:'Mona Sans',Helvetica,Arial,sans-serif;padding:0 clamp(16px,1.67vw,32px) clamp(80px,7vw,140px)">
+  <header style="height:clamp(64px,4.6vw,88px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2a2a28">
+    <a href="index.html" style="font-size:clamp(17px,1.15vw,22px);font-weight:500;letter-spacing:-0.02em;color:#ece8e1">Blacktrama</a>
+    <nav style="display:flex;gap:clamp(20px,2.1vw,40px);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(11px,0.63vw,12px);letter-spacing:0.08em;text-transform:uppercase">
+      <a href="trabajos.html" style="color:#8a8780;padding:6px 0;border-bottom:1px solid transparent" style-hover="color:#ece8e1">Trabajo</a>
+      <a href="contacto.html" style="color:#ece8e1;padding:6px 0;border-bottom:1px solid #ece8e1" style-hover="color:#ffd60a;border-bottom-color:#ffd60a">Contacto</a>
+    </nav>
+  </header>
+
+  <div style="{{ grid }}">
+    <div style="{{ leftCol }}">
+      <div style="container-type:inline-size">
+        <h1 style="margin:0;text-transform:uppercase;font-weight:400;font-size:clamp(48px,19cqw,200px);line-height:0.88;letter-spacing:-0.03em;color:#ece8e1">
+          <span data-rv="line" style="display:block">Hagamos</span>
+          <span data-rv="line" style="display:block"><em style="font-style:italic;color:#ffd60a">Arte</em></span>
+          <span data-rv="line" style="display:block">Juntos</span>
+        </h1>
+      </div>
+      <p data-rv="fade" style="{{ introStyle }}">Para marcas con hambre de algo mejor que una plantilla: webs pensadas desde cero, con criterio y carácter.</p>
+    </div>
+
+    <div ref="{{ panelRef }}" style="min-width:0">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:clamp(36px,2.6vw,48px)">
+          <div data-rv="fade" style="{{ twoCols }}">
+            <label style="display:flex;flex-direction:column;gap:clamp(14px,1vw,20px)">
+              <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Nombre</span>
+              <input name="nombre" type="text" required="" placeholder="Cómo te llamas" style="width:100%;background:transparent;border:0;border-bottom:1px solid #3a3a39;border-radius:0;outline:none;padding:0 0 clamp(18px,1.5vw,28px);font:inherit;font-size:clamp(17px,1.04vw,20px);color:#ece8e1" style-focus="border-bottom-color:#ece8e1">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:clamp(14px,1vw,20px)">
+              <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Correo o WhatsApp</span>
+              <input name="contacto" type="text" required="" placeholder="Dónde te respondo" style="width:100%;background:transparent;border:0;border-bottom:1px solid #3a3a39;border-radius:0;outline:none;padding:0 0 clamp(18px,1.5vw,28px);font:inherit;font-size:clamp(17px,1.04vw,20px);color:#ece8e1" style-focus="border-bottom-color:#ece8e1">
+            </label>
+          </div>
+
+          <label data-rv="fade" style="display:flex;flex-direction:column;gap:clamp(14px,1vw,20px)">
+            <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Empresa o marca (opcional)</span>
+            <input name="empresa" type="text" placeholder="Nombre del negocio" style="width:100%;background:transparent;border:0;border-bottom:1px solid #3a3a39;border-radius:0;outline:none;padding:0 0 clamp(18px,1.5vw,28px);font:inherit;font-size:clamp(17px,1.04vw,20px);color:#ece8e1" style-focus="border-bottom-color:#ece8e1">
+          </label>
+
+          <div data-rv="fade" role="group" aria-label="Qué necesitas" style="display:flex;flex-direction:column;gap:clamp(14px,1vw,20px)">
+            <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Qué necesitas (puedes elegir varios)</span>
+            <div style="{{ chipGrid }}">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+                <button type="button" aria-pressed="{{ s.on }}" onClick="{{ s.toggle }}" style="{{ s.style }}">
+                  <span aria-hidden="true" style="{{ s.box }}"></span>
+                  <span>{{ s.label }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ err }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:14px;color:#ffd60a">Elige al menos una opción.</span>
+            </sc-if>
+          </div>
+
+          <label data-rv="fade" style="display:flex;flex-direction:column;gap:clamp(14px,1vw,20px)">
+            <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Presupuesto aproximado (opcional)</span>
+            <span style="position:relative;display:block">
+              <select name="presupuesto" value="{{ budget }}" onChange="{{ setBudget }}" style="width:100%;appearance:none;-webkit-appearance:none;background:transparent;border:0;border-bottom:1px solid #3a3a39;border-radius:0;outline:none;padding:0 32px clamp(18px,1.5vw,28px) 0;font:inherit;font-size:clamp(17px,1.04vw,20px);color:{{ budgetColor }};cursor:pointer" style-focus="border-bottom-color:#ece8e1">
+                <option value="" disabled="">Elige un rango</option>
+                <option value="lt1k">Menos de USD 1,000</option>
+                <option value="1-3k">USD 1,000 a 3,000</option>
+                <option value="3-6k">USD 3,000 a 6,000</option>
+                <option value="gt6k">Más de USD 6,000</option>
+                <option value="nose">Aún no lo sé</option>
+              </select>
+              <i class="ph ph-caret-down" aria-hidden="true" style="position:absolute;right:0;top:4px;font-size:18px;color:#ece8e1;pointer-events:none"></i>
+            </span>
+          </label>
+
+          <label data-rv="fade" style="display:flex;flex-direction:column;gap:clamp(14px,1vw,20px)">
+            <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Plazo</span>
+            <span style="position:relative;display:block">
+              <select name="plazo" value="{{ plazo }}" onChange="{{ setPlazo }}" style="width:100%;appearance:none;-webkit-appearance:none;background:transparent;border:0;border-bottom:1px solid #3a3a39;border-radius:0;outline:none;padding:0 32px clamp(18px,1.5vw,28px) 0;font:inherit;font-size:clamp(17px,1.04vw,20px);color:{{ plazoColor }};cursor:pointer" style-focus="border-bottom-color:#ece8e1">
+                <option value="" disabled="">¿Para cuándo lo necesitas?</option>
+                <option value="ya">Lo antes posible</option>
+                <option value="1-2m">En 1 a 2 meses</option>
+                <option value="3m">En 3 meses o más</option>
+                <option value="libre">Sin fecha definida</option>
+              </select>
+              <i class="ph ph-caret-down" aria-hidden="true" style="position:absolute;right:0;top:4px;font-size:18px;color:#ece8e1;pointer-events:none"></i>
+            </span>
+          </label>
+
+          <label data-rv="fade" style="display:flex;flex-direction:column;gap:clamp(10px,0.8vw,14px)">
+            <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#a8a49c">Cuéntame del proyecto</span>
+            <span style="font-size:clamp(14px,0.78vw,15px);color:#a8a49c">Qué haces, para quién es y qué debería lograr la web.</span>
+            <textarea name="mensaje" rows="4" required="" placeholder="Escribe aquí…" style="margin-top:clamp(8px,0.8vw,14px);width:100%;min-height:clamp(120px,8.5vw,160px);background:transparent;border:0;border-bottom:1px solid #3a3a39;border-radius:0;outline:none;resize:vertical;padding:0 0 clamp(18px,1.5vw,28px);font:inherit;font-size:clamp(17px,1.04vw,20px);line-height:1.45;color:#ece8e1" style-focus="border-bottom-color:#ece8e1"></textarea>
+          </label>
+
+          <div data-rv="fade" style="display:flex;flex-direction:column;gap:clamp(32px,2.4vw,46px);margin-top:-8px">
+            <button type="submit" style="width:100%;height:clamp(56px,3.5vw,67px);display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:#ece8e1;color:#0c0c0b;border:0;border-radius:0;font:inherit;font-size:clamp(16px,0.94vw,18px);font-weight:500;cursor:pointer" style-hover="background:#ffd60a">Enviar <i class="ph ph-arrow-right" aria-hidden="true" style="font-size:1.1em;line-height:1"></i></button>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;font-size:clamp(14px,0.78vw,15px)">
+              <span style="color:#8a8780">¿Prefieres hablar directo?</span>
+              <div style="display:flex;flex-wrap:wrap;gap:12px 24px">
+                <a href="#" style="display:inline-flex;align-items:center;gap:6px;color:#ece8e1" style-hover="color:#ffd60a"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true" style="font-size:1.2em;line-height:1"></i> WhatsApp</a>
+                <a href="mailto:hola@blacktrama.studio" style="color:#ece8e1" style-hover="color:#ffd60a">hola@blacktrama.studio</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </sc-if>
+
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:clamp(20px,1.6vw,30px)">
+          <div data-ok="" style="display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#ece8e1"><span aria-hidden="true" style="width:14px;height:14px;background:#ffd60a"></span>Mensaje enviado</div>
+          <p data-ok="" style="margin:0;max-width:15em;font-size:clamp(32px,2.7vw,52px);line-height:1.08;letter-spacing:-0.02em;color:#ece8e1;text-wrap:pretty">Gracias. Leo cada mensaje y te respondo por correo o WhatsApp.</p>
+          <a data-ok="" href="trabajos.html" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:clamp(17px,1.04vw,20px);color:#8a8780" style-hover="color:#ece8e1">Mientras tanto, puedes ver más trabajos <i class="ph ph-arrow-right" aria-hidden="true" style="font-size:1em;line-height:1"></i></a>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+  {{ vintage }}
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.07,&quot;min&quot;:0,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Vintage&quot;},&quot;smooth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.09,&quot;min&quot;:0.03,&quot;max&quot;:0.3,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Movimiento&quot;}}">
+const SERVICES = ['Diseño web', 'Landing page', 'E-commerce', 'UX/UI de producto', 'Rediseño', 'Frontend'];
+const EIO = 'cubic-bezier(0.7, 0, 0.2, 1)', EOUT = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+const PAGE_TRANSITIONS = false; // blur entre páginas + tarjeta→case study (desactivado por ahora)
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1920, sel: [], budget: '', plazo: '', sent: false, err: false };
+  rootRef = React.createRef(); panelRef = React.createRef();
+  onResize = () => this.setState({ w: window.innerWidth });
+
+  initPageTransitions() {
+    if (document.body.animate) document.body.animate([{ filter: 'blur(14px)', opacity: 0 }, { filter: 'blur(0px)', opacity: 1 }], { duration: 900, easing: EOUT });
+    this.onPageShow = (e) => { if (e.persisted) { this.leaving = false; document.body.getAnimations().forEach(a => a.cancel()); } };
+    window.addEventListener('pageshow', this.onPageShow);
+    this.onLinkClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target.closest && e.target.closest('a[href]'); if (!a || a.target === '_blank') return;
+      const raw = a.getAttribute('href'); if (!raw || raw.startsWith('#') || /^(mailto|tel):/.test(raw)) return;
+      const url = new URL(raw, location.href); if (url.origin !== location.origin) return;
+      e.preventDefault();
+      if (url.pathname === location.pathname && url.search === location.search) { if (this.lenis) this.lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+      this.leave(url.href);
+    };
+    document.addEventListener('click', this.onLinkClick);
+  }
+  leave(href) {
+    if (this.leaving) return; this.leaving = true;
+    document.body.animate([{ filter: 'blur(0px)', opacity: 1 }, { filter: 'blur(14px)', opacity: 0 }], { duration: 550, easing: 'cubic-bezier(0.7, 0, 0.84, 0)', fill: 'forwards' }).onfinish = () => { location.href = href; };
+  }
+  reveal() {
+    const root = this.rootRef.current; if (!root || !root.animate || this.reduced) return;
+    root.querySelectorAll('[data-rv]').forEach((el, k) => {
+      const line = el.dataset.rv === 'line';
+      el.animate(line
+        ? [{ opacity: 0, transform: 'translateY(0.25em)', filter: 'blur(10px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }]
+        : [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }],
+        { duration: line ? 1200 : 800, delay: 250 + k * 90, easing: EOUT, fill: 'backwards' });
+    });
+  }
+  submit = (e) => {
+    e.preventDefault();
+    if (!this.state.sel.length) { this.setState({ err: true }); return; }
+    const p = this.panelRef.current;
+    const done = () => this.setState({ sent: true }, () => {
+      if (this.lenis) this.lenis.scrollTo(0, { duration: 1.2 }); else window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (this.reduced || !p) return;
+      p.querySelectorAll('[data-ok]').forEach((el, k) => el.animate([{ opacity: 0, transform: 'translateY(20px)', filter: 'blur(10px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: 1000, delay: 150 + k * 140, easing: EOUT, fill: 'backwards' }));
+    });
+    if (p && p.animate && !this.reduced) p.animate([{ opacity: 1, filter: 'blur(0px)' }, { opacity: 0, filter: 'blur(12px)' }], { duration: 450, easing: EIO }).onfinish = done;
+    else done();
+  };
+  tick = (t) => {
+    if (!this.lenis && window.Lenis) this.lenis = new window.Lenis({ lerp: this.props.smooth ?? 0.09, anchors: true });
+    if (this.lenis) this.lenis.raf(t);
+    this.raf = requestAnimationFrame(this.tick);
+  };
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.addEventListener('resize', this.onResize); this.onResize();
+    if (PAGE_TRANSITIONS) this.initPageTransitions();
+    this.reveal();
+    if (!this.reduced) this.raf = requestAnimationFrame(this.tick);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    document.removeEventListener('click', this.onLinkClick); window.removeEventListener('pageshow', this.onPageShow);
+    cancelAnimationFrame(this.raf); if (this.lenis) this.lenis.destroy();
+  }
+  renderVals() {
+    const mobile = this.state.w < 768, wide = this.state.w >= 1100;
+    const sel = this.state.sel;
+    const services = SERVICES.map(label => {
+      const on = sel.includes(label);
+      return {
+        label, on,
+        toggle: () => this.setState(s => ({ err: false, sel: s.sel.includes(label) ? s.sel.filter(x => x !== label) : [...s.sel, label] })),
+        style: { display: 'flex', alignItems: 'center', gap: 14, height: 'clamp(52px,3.1vw,59px)', padding: '0 18px', background: 'transparent', border: '1px solid ' + (on ? '#ece8e1' : '#2a2a28'), borderRadius: 0, font: 'inherit', fontSize: 'clamp(15px,0.89vw,17px)', color: on ? '#ece8e1' : '#a8a49c', textAlign: 'left', cursor: 'pointer', transition: 'border-color .25s, color .25s' },
+        box: { width: 14, height: 14, flex: 'none', background: on ? '#ffd60a' : 'transparent', border: on ? '1px solid #ffd60a' : '1px solid #8a8780', transition: 'background .25s, border-color .25s' },
+      };
+    });
+    const grain = this.props.grain ?? 0.07;
+    const svg = "data:image/svg+xml;utf8," + encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(#n)'/></svg>");
+    const vintage = grain > 0 ? React.createElement('div', { 'aria-hidden': true, style: { position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 50, overflow: 'hidden' } },
+      React.createElement('div', { style: { position: 'absolute', inset: '-10%', backgroundImage: `url("${svg}")`, opacity: grain, animation: 'bt-grain 1s steps(6) infinite' } }),
+      React.createElement('div', { style: { position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.35) 100%)' } })
+    ) : null;
+    return {
+      rootRef: this.rootRef, panelRef: this.panelRef, vintage, services,
+      sent: this.state.sent, notSent: !this.state.sent, err: this.state.err, submit: this.submit,
+      budget: this.state.budget, plazo: this.state.plazo,
+      budgetColor: this.state.budget ? '#ece8e1' : '#7d7a73', plazoColor: this.state.plazo ? '#ece8e1' : '#7d7a73',
+      setBudget: (e) => this.setState({ budget: e.target.value }), setPlazo: (e) => this.setState({ plazo: e.target.value }),
+      grid: wide
+        ? { display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,760px)', gap: 'clamp(40px,3.5vw,68px)', alignItems: 'start', paddingTop: 'clamp(56px,3.8vw,72px)' }
+        : { display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 64, paddingTop: 48 },
+      leftCol: wide
+        ? { position: 'sticky', top: 'clamp(80px,4.6vw,96px)', paddingTop: 'clamp(4px,1vw,20px)' }
+        : { position: 'relative' },
+      introStyle: wide
+        ? { margin: 'clamp(40px,3.4vw,64px) 0 0 auto', maxWidth: '19em', fontSize: 'clamp(17px,1.04vw,20px)', lineHeight: 1.5, color: '#a8a49c', textWrap: 'pretty' }
+        : { margin: '32px 0 0', maxWidth: '24em', fontSize: 17, lineHeight: 1.5, color: '#a8a49c' },
+      twoCols: { display: 'grid', gridTemplateColumns: mobile ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)', gap: mobile ? 36 : 24 },
+      chipGrid: { display: 'grid', gridTemplateColumns: mobile ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)', gap: 12 },
+    };
+  }
+}
+</script>
+</body>
+</html>
